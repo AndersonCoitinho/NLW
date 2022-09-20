@@ -14,6 +14,7 @@ import { GameParams } from "../../@types/navigation";
 import { Heading } from "../../components/Heading";
 import { Background } from "../../components/Background";
 import { DuoCard, DuoCardProps } from "../../components/DuoCard";
+import React from "react";
 
 export function Game() {
   const [duos, setDuos] = useState<DuoCardProps[]>([])
@@ -27,7 +28,7 @@ export function Game() {
   }
 
   useEffect(() => {
-    fetch(`http://192.168.0.100:3333/games/${game.id}/ads`)
+    fetch(`http://192.168.3.48:3333/games/${game.id}/ads`)
       .then(response => response.json())
       .then(data => setDuos(data))
   }, []);
